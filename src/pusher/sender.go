@@ -1,11 +1,11 @@
 // Package main
-package main
+package pusher
 import (
     "fmt"
 	"github.com/anachronistic/apns"
 )
 
-func send() {
+func Send() {
 	payload := apns.NewPayload()
 	payload.Alert = "Hello, world!"
 	payload.Badge = 42

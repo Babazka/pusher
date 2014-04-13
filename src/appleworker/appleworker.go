@@ -4,6 +4,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"pusher"
 )
 
 var (
@@ -24,6 +26,6 @@ func init() {
 
 func main() {
 	fmt.Printf("exchangeType %+v\n", *exchangeType)
-	send()
+	pusher.Send()
 
 }

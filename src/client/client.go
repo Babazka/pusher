@@ -34,14 +34,14 @@ func listen(ch chan string) {
 	}
 }
 
-//func main() {
-    //ch:=make(chan string)
-    //go listen(ch)
-    //for {
-        //msg:= <-ch
-		//fmt.Println("Got message too !")
-		//fmt.Printf("msg %+v\n", msg)
+func main() {
+    ch:=make(chan string)
+    go listen(ch)
+    for {
+        msg:= <-ch
+		fmt.Println("Got message too !")
+		fmt.Printf("msg %+v\n", msg)
 
-    //}
-//}
+    }
+}
 

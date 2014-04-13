@@ -1,4 +1,3 @@
-BIN=pusher
 .PHONY: $(BIN) test doc
 
 export GOPATH:=$(shell pwd)
@@ -7,11 +6,17 @@ export CWD:=$(shell pwd)
 # инжектим в переменную version_info данные о сборке
 #LDFLAGS="-X main.version_info \"$(shell git rev-parse --short HEAD) built at $(shell date) on $(shell hostname)\""
 
-$(BIN):
-	go install $(BIN)
+appleworker:
+	go install appleworker
 
-run: $(BIN)
-	bin/$(BIN)
+client:
+	go install client
+
+run_appleworker: appleworker
+	bin/appleworker
+
+run_client: client
+	bin/client
 
 test:
 	go test $(BIN) -config $(CWD)/etc/unittest.json
